@@ -1,0 +1,22 @@
+    void top_view(Node root) {
+        preOrderLeft(root);
+        postOrderRight(root.right);
+    }
+    
+    void preOrderLeft(Node root) {
+        if (root == null) {
+            return;
+        }
+        
+        preOrderLeft(root.left);
+        System.out.print(root.data + " ");
+    }
+    
+    void postOrderRight(Node root) {
+        if (root == null) {
+            return;
+        }
+        
+        System.out.print(root.data + " ");
+        postOrderRight(root.right);
+    }

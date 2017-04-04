@@ -1,0 +1,23 @@
+
+    boolean isBst(Node node, int min, int max) {
+        
+        if (node == null) {
+            return true;
+        }
+        
+        if (node.data < min || node.data > max) {
+            return false;
+        }
+        
+        
+        return isBst(node.left, min, node.data - 1) 
+            && isBst(node.right, node.data + 1, max) ;
+        
+    }
+
+    boolean checkBST(Node root) {
+        
+        return isBst(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+        
+            
+    }

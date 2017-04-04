@@ -1,0 +1,19 @@
+    LinkedList<Node> levels = new LinkedList<>();
+    void LevelOrder(Node root) {
+        levels.add(root);
+        
+        while (!levels.isEmpty()) {
+            traverse(levels.poll());
+        }
+    }
+    
+    private void traverse(Node node) {
+        if (node == null) {
+            return;
+        }
+        
+        System.out.print(node.data + " ");
+        
+        levels.add(node.left);
+        levels.add(node.right);
+    }

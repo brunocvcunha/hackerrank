@@ -1,0 +1,21 @@
+    static int getHeight(Node root) {
+        return getHeight(root, -1);
+    }
+    
+    static int getHeight(Node root, int actual) {
+        if (root == null) {
+            return actual;
+        }
+        
+        actual++;
+        
+        int leftHeight = getHeight(root.left, actual);
+        int rightHeight = getHeight(root.right, actual);
+        
+        if (leftHeight > rightHeight) {
+            return leftHeight;
+        }
+        
+        return rightHeight;
+    }
+

@@ -1,0 +1,25 @@
+
+		boolean checkBST(Node root) {
+        return checkBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    boolean checkBST(Node node, int min, int max) {
+        if (node == null) {
+            return true;
+        }
+
+        if (node.data < min || node.data > max) {
+            return false;
+        }
+        
+        if (!checkBST(node.left, min, node.data - 1)) {
+            return false;
+        }
+        if (!checkBST(node.right, node.data + 1, max)) {
+            return false;
+        }
+
+        
+        return true;
+
+    }
